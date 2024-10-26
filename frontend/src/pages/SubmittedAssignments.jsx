@@ -24,8 +24,8 @@ const SubmittedAssignments = () => {
         getSubmittedAssignments();
     }, []);
 
-    const handleReject = async () => {
-        const response = await fetch(`http://localhost:3000/admin/assignments/6719bd28e97ff61c55745cca/reject`, {
+    const handleReject = async (id) => {
+        const response = await fetch(`http://localhost:3000/admin/assignments/${id}/reject`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -39,8 +39,8 @@ const SubmittedAssignments = () => {
 
     }
 
-    const handleAccept = async () => {
-        const response = await fetch(`http://localhost:3000/admin/assignments/6719bd28e97ff61c55745cca/accept`, {
+    const handleAccept = async (id) => {
+        const response = await fetch(`http://localhost:3000/admin/assignments/${id}/accept`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -61,8 +61,8 @@ const SubmittedAssignments = () => {
             
             <div key={assignment._id} className='w-1/4 mt-4'>
                 <p>{assignment.task}</p>
-                <button onClick={handleReject}>Reject</button>
-                <button onClick={handleAccept} className='ml-6'>Accept</button>
+                <button onClick={() => handleReject(assignment._id)}>Reject</button>
+                <button onClick={() => handleAccept(assignment._id)} className='ml-6'>Accept</button>
             </div>
         )
 
