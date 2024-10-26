@@ -5,8 +5,7 @@ import Login from './pages/Login'
 import Layout from './pages/Layout'
 import User from './pages/User'
 import Assignment from './pages/Assignment'
-// import AdminRegister from './pages/AdminRegister'
-
+import SubmittedAssignments from './pages/SubmittedAssignments'
 
 
 function App() {
@@ -14,10 +13,12 @@ function App() {
     <div className='bg-gray-800 text-white w-full h-screen p-6'>
       <Routes>
         <Route path='' element={<Layout />} >
-          <Route path='/:role/register' element={<Register/>} />
+          <Route path='/user/register' element={<Register/>} />
+          <Route path='/admin/register' element={<Register/>} />
           <Route path='/:role/login' element={<Login />} />
           <Route path='/user/admins' element={<User />} />
-          <Route path='/user/assignment' element={<Assignment />} />
+          <Route path='/user/upload' element={<Assignment />} />
+          <Route path='/admin/assignments' element={<SubmittedAssignments />} />
         </Route>
       </Routes>
     </div>

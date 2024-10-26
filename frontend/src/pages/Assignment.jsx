@@ -19,7 +19,7 @@ function Assignment() {
 
     //   console.log(details);
 
-    const handleLogin = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const response = await fetch(`http://localhost:3000/user/upload`, {
@@ -42,7 +42,7 @@ function Assignment() {
                 <h1 className="text-center sm:text-[48px] xs:text-[30px] text-[20px]">Create an Assignment</h1>
                 <form
                     className="flex gap-3 flex-col w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    onSubmit={handleLogin}
+                    onSubmit={handleSubmit}
                 >
                     <input
                         className="bg-transparent rounded-md border-[1px] px-3 py-1"
